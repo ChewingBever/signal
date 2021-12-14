@@ -1344,7 +1344,7 @@ class Portal(DBPortal, BasePortal):
         # Remote delete is only for your own messages
         levels.redact = 99
         if self.main_intent.mxid not in levels.users:
-            levels.users[self.main_intent.mxid] = 9001 if is_initial else 100
+            levels.users[self.main_intent.mxid] = 100 if is_initial else 100
         return levels
 
     async def _create_matrix_room(self, source: u.User, info: ChatInfo) -> RoomID | None:
